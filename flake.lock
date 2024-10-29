@@ -20,6 +20,23 @@
         "type": "github"
       }
     },
+    "mfem": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1715122606,
+        "narHash": "sha256-NJI8ABsfnnzMETfyscpNX8qK72BFF9FfxsY0J48aRtg=",
+        "owner": "mfem",
+        "repo": "mfem",
+        "rev": "dc9128ef596e84daf1138aa3046b826bba9d259f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mfem",
+        "ref": "v4.7",
+        "repo": "mfem",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1730150043,
@@ -39,6 +56,7 @@
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
+        "mfem": "mfem",
         "nixpkgs": "nixpkgs"
       }
     }

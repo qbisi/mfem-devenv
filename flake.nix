@@ -2,11 +2,18 @@
   description = "A basic flake with a shell";
 
   inputs = {
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # wait for pr
+    # nixpkgs.url = "github:NixOS/nixpkgs/master";
     nixpkgs.url = "github:qbisi/nixpkgs/mfem";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+    mfem = {
+      # change url to your own mfem repository
+      # url = "/home/<user>/mfem-devenv/mfem";
+      url = "github:mfem/mfem/v4.7";
+      flake = false;
     };
   };
 
@@ -44,7 +51,9 @@
           };
 
           packages = {
-            mfem = pkgs.mfem;
+            mfem = pkgs.mfem.overrideAttrs {
+              src = inputs.mfem;
+            };
           };
         };
     };
